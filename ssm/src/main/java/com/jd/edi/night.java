@@ -9,6 +9,7 @@ public class night {
     private String age;
     private String sex;
     private String from;
+    private String ten;
 
 
 }
