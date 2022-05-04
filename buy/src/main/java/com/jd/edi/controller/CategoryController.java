@@ -56,8 +56,8 @@ public class CategoryController {
     }
 
     @GetMapping("/list")
-    public R<List<Category>> getCategoryList(@RequestParam Integer type) {
-        List<Category> list = categoryService.getCategoryList(type);
+    public R<List<Category>> getCategoryList(Category category) {
+        List<Category> list = categoryService.getCategoryList(category.getType());
         return R.success(list);
     }
 

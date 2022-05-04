@@ -49,6 +49,7 @@ public class AuthInterceptor implements HandlerInterceptor {
             /**
              * 注意问题： 匹配的时候 next有有空字符，导致匹配失败；
              */
+            log.info("path: {},  exclude: {}", path, next);
             if (path.startsWith(next)) {
                 return true;
             }

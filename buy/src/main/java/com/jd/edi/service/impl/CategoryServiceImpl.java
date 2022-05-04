@@ -51,7 +51,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> getCategoryList(Integer type) {
         LambdaQueryWrapper<Category> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(Category::getType, type);
+        // String.value(type);这样是无法盘判空的
+        if (type != null) {
+            queryWrapper.eq(Category::getType, type);
+        }
         queryWrapper.orderByAsc(Category::getSort).orderByDesc(Category::getUpdateTime);
         return categoryMapper.selectList(queryWrapper);
     }

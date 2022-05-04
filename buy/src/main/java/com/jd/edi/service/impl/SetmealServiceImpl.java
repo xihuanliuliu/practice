@@ -42,9 +42,12 @@ public class SetmealServiceImpl implements SetmealService {
     }
 
     @Override
-    public List<Setmeal> getSetmealList() {
-        QueryWrapper<Setmeal> queryWrapper = new QueryWrapper<>();
-        return null;
+    public List<Setmeal> getSetmealList(Setmeal setmeal) {
+        LambdaQueryWrapper<Setmeal> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(setmeal.getCategoryId() != null,Setmeal::getCategoryId,setmeal.getCategoryId());
+        queryWrapper.eq(setmeal.getStatus() != null,Setmeal::getStatus,setmeal.getStatus());
+        queryWrapper.orderByDesc(Setmeal::getUpdateTime);
+        return setmealMapper.selectList(queryWrapper);
     }
 
     @Transactional(rollbackFor = Exception.class)
