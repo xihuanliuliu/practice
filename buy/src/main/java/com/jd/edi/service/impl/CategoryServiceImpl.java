@@ -51,7 +51,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> getCategoryList(Integer type) {
         LambdaQueryWrapper<Category> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(Category::getType, type);
+        queryWrapper.eq(type != null, Category::getType, type);
         queryWrapper.orderByAsc(Category::getSort).orderByDesc(Category::getUpdateTime);
         return categoryMapper.selectList(queryWrapper);
     }
