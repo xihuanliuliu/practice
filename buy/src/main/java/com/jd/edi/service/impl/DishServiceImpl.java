@@ -3,11 +3,13 @@ package com.jd.edi.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jd.edi.auth.AuthContext;
+import com.jd.edi.entity.Category;
 import com.jd.edi.entity.Dish;
 import com.jd.edi.entity.DishFlavor;
 import com.jd.edi.exception.CategoryException;
 import com.jd.edi.mapper.DishFlavorMapper;
 import com.jd.edi.mapper.DishMapper;
+import com.jd.edi.service.CategoryService;
 import com.jd.edi.service.DishFlavorService;
 import com.jd.edi.service.DishService;
 import com.jd.edi.vo.DishDto;
@@ -19,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,6 +34,8 @@ public class DishServiceImpl implements DishService {
     private DishMapper dishMapper;
     @Resource
     private DishFlavorService dishFlavorService;
+    @Resource
+    private CategoryService categoryService;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -127,12 +132,36 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
-    public List<Dish> getDishListByCategoryId(String categoryId) {
+    public List<Dish> getDishListByCategoryId(Long categoryId) {
         LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(Dish::getCategoryId, categoryId);
+        if (categoryId != null) {
+            queryWrapper.eq(Dish::getCategoryId, categoryId);
+        }
         queryWrapper.eq(Dish::getStatus, 1);
         queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
         return dishMapper.selectList(queryWrapper);
+    }
+
+    @Override
+    public List<DishDto> getDishDtoList(Dish dish) {
+        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
+        queryWrapper.eq(Dish::getStatus, 1);
+        queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+
+        List<Dish> list = dishMapper.selectList(queryWrapper);
+
+        List<DishDto> dishDtoList = list.stream().map((item)->{
+            DishDto dishDto = new DishDto();
+            BeanUtils.copyProperties(item, dishDto);
+            List<DishFlavor> dishFlavors = dishFlavorService.getDishFlavors(item.getId());
+            dishDto.setFlavors(dishFlavors);
+            Category category = categoryService.getCategoryById(item.getCategoryId());
+            dishDto.setCategoryName(category.getName());
+            return dishDto;
+        }).collect(Collectors.toList());
+
+        return dishDtoList;
     }
 
     @Transactional(rollbackFor = Exception.class)

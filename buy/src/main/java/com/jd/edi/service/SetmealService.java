@@ -10,7 +10,7 @@ public interface SetmealService {
 
     Integer countSetmealByCategoryId(Long categoryId);
 
-    List<Setmeal> getSetmealList();
+    List<Setmeal> getSetmealList(Setmeal setmeal);
 
     void saveSetmeal(SetmealDto setmealDto);
 
@@ -25,4 +25,6 @@ public interface SetmealService {
     Integer countSetmealStatus(List<Long> ids);
 
     void updateSetmealStatus(List<Long> ids, Integer status);
+
+
 }

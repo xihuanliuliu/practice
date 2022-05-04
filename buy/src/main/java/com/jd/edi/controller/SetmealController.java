@@ -90,4 +90,15 @@ public class SetmealController {
         setmealService.updateSetmealStatus(ids, status);
         return R.success(status==1? "启售":"停售" + "成功");
     }
+
+    /**
+     * 根据条件查询套餐数据
+     * @param setmeal
+     * @return
+     */
+    @GetMapping("/list")
+    public R<List<Setmeal>> list(Setmeal setmeal){
+        List<Setmeal> setmealList = setmealService.getSetmealList(setmeal);
+        return R.success(setmealList);
+    }
 }

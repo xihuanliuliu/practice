@@ -96,25 +96,11 @@ public class EmployeeController extends AbstractController {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     @PostMapping(path = "/login")
     public R<Employee> login (HttpServletRequest request, @RequestBody LoginUser loginUser){
         if(loginUser == null) {
             return R.error("用户未登录");
         }
-        log.info("user info : {} ", loginUser.toString());
         Employee employee = employeeService.getEmployeeByEmployeeUserName(loginUser.getUsername());
         if(employee == null) {
             return R.error("用户名或者密码错误");
@@ -126,7 +112,6 @@ public class EmployeeController extends AbstractController {
         if(employee.getStatus() != 1) {
             return R.error("用户名已经被禁用");
         }
-        System.out.println("-----------------");
         request.getSession().setAttribute("employee", employee.getId());
         return R.success(employee);
     }
