@@ -21,7 +21,7 @@ mybatis-plus:
 
 auth:
   exclude:
-    path: /employee/login;/employee/logout;/backend/;/front/;/backend/page/login/login.html;/backend/page/demo/upload.html;/common/
+    path: /employee/login;/employee/logout;/backend/;/front/;/backend/page/login/login.html;/backend/page/demo/upload.html;/common/;/user/sendMsg;/user/login
 
 common:
   path: E:\BaiduNetdiskDownload\reset
