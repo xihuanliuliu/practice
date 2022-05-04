@@ -72,4 +72,11 @@ public class ShoppingCartImpl implements ShoppingCartService {
         ShoppingCart cart = shoppingCartMapper.selectOne(queryWrapper);
         return cart;
     }
+
+    @Override
+    public void deleteShoppingCart(Long userId) {
+        LambdaQueryWrapper<ShoppingCart> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(ShoppingCart::getUserId, userId);
+        shoppingCartMapper.delete(queryWrapper);
+    }
 }

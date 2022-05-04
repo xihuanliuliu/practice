@@ -12,4 +12,6 @@ public interface ShoppingCartService {
     void subShoppingCart(ShoppingCart shoppingCart);
 
     ShoppingCart getShoppingCart(ShoppingCart shoppingCart);
+
+    void deleteShoppingCart(Long userId);
 }

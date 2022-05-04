@@ -33,8 +33,13 @@ public class AuthInterceptor implements HandlerInterceptor {
             return true;
         }
         if (request.getSession().getAttribute("employee") != null) {
-            log.info("用户已经登录，用户名: 【{}】", request.getSession().getAttribute("employee"));
+            log.info("管理端用户已经登录，用户名: 【{}】", request.getSession().getAttribute("employee"));
             AuthContext.setCurrentUser((Long) request.getSession().getAttribute("employee"));
+            return true;
+        }
+        if (request.getSession().getAttribute("user") != null ) {
+            log.info("APP用户已经登录，用户名: 【{}】", request.getSession().getAttribute("user"));
+            AuthContext.setCurrentUser((Long) request.getSession().getAttribute("user"));
             return true;
         }
         log.info("用户未登录");
