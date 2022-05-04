@@ -31,6 +31,7 @@ public class CategoryController {
     
     @PostMapping
     public R<String> saveCategory(HttpServletRequest request, @RequestBody Category category) {
+        // 添加注释
         int ret = categoryService.saveCategory(category);
         if (ret != 1){
             return R.error("添加分类失败");
