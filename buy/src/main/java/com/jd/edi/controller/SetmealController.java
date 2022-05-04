@@ -34,6 +34,7 @@ public class SetmealController {
 
     @PostMapping
     public R<String> saveSetmeal(@RequestBody SetmealDto setmealDto) {
+        log.info("setmealDto: {}", setmealDto)
         setmealService.saveSetmeal(setmealDto);
         return R.success("添加套餐成功");
     }
@@ -73,6 +74,7 @@ public class SetmealController {
 
     @PutMapping
     public R<String> updateSetmeal(@RequestBody SetmealDto setmealDto) {
+        log.info("setmealDto: {}", setmealDto)
         setmealService.updateSetmeal(setmealDto);
         return R.success("更新成功");
     }
