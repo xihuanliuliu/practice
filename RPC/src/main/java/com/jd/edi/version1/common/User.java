@@ -1,4 +1,4 @@
-package com.jd.edi.version0.common;
+package com.jd.edi.version1.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

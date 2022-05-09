@@ -1,8 +1,7 @@
-package com.jd.edi.version1.provider;
+package com.jd.edi.version2.provider;
 
-import com.jd.edi.version1.common.RPCRequest;
-import com.jd.edi.version1.common.RPCResponse;
-import com.jd.edi.version1.common.User;
+import com.jd.edi.version2.common.RPCRequest;
+import com.jd.edi.version2.common.RPCResponse;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

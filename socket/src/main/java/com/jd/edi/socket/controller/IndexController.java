@@ -1,15 +1,9 @@
-package com.yyj.controller;
+package com.jd.edi.socket.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-/**
- * .
- * Package Name:   com.yyj.controller
- *
- * @author: YYJ
- * Date Time:      2021/5/24 17:27
- */
+
 
 @Controller
 public class IndexController {

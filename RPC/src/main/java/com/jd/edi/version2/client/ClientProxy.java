@@ -1,7 +1,7 @@
-package com.jd.edi.version1.client;
+package com.jd.edi.version2.client;
 
-import com.jd.edi.version1.common.RPCRequest;
-import com.jd.edi.version1.common.RPCResponse;
+import com.jd.edi.version2.common.RPCRequest;
+import com.jd.edi.version2.common.RPCResponse;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.InvocationHandler;
@@ -46,9 +46,9 @@ public class ClientProxy implements InvocationHandler {
         // 根据request
         // request的构建，使用了lombok中的builder，代码简洁
         //数据传输
-        System.out.println("ClientProxy invoke, interfaceName:"+ method.getDeclaringClass().getName() +
-                " method:"+ method.getName() + " , type:" + method.getParameterTypes());
-        System.out.println("ClientProxy invoke, method.getAnnotations: " + method.getAnnotations() + ",getDeclaringClass:"+ method.getClass().getName());
+//        System.out.println("ClientProxy invoke, interfaceName:"+ method.getDeclaringClass().getName() +
+//                " method:"+ method.getName() + " , type:" + method.getParameterTypes());
+//        System.out.println("ClientProxy invoke, method.getAnnotations: " + method.getAnnotations() + ",getDeclaringClass:"+ method.getClass().getName());
         RPCRequest request = RPCRequest.builder().interfaceName(method.getDeclaringClass().getName())
                 .methodName(method.getName())
                 .params(args).paramsType(method.getParameterTypes()).build();

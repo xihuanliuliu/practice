@@ -1,4 +1,4 @@
-package com.yyj.pojo;
+package com.jd.edi.socket.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

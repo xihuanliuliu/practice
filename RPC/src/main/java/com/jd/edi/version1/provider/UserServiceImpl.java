@@ -1,7 +1,7 @@
-package com.jd.edi.version0.provider;
+package com.jd.edi.version1.provider;
 
-import com.jd.edi.version0.common.User;
-import com.jd.edi.version0.service.UserService;
+import com.jd.edi.version1.common.User;
+import com.jd.edi.version1.service.UserService;
 
 public class UserServiceImpl implements UserService {
     @Override

@@ -1,6 +1,6 @@
-package com.jd.edi.version1.service;
+package com.jd.edi.version2.service;
 
-import com.jd.edi.version1.common.User;
+import com.jd.edi.version2.common.User;
 
 public interface UserService {
 

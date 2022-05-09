@@ -1,16 +1,12 @@
-package com.yyj.util;
+package com.jd.edi.socket.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.yyj.pojo.ResultMessage;
+import com.jd.edi.socket.entity.ResultMessage;
+import lombok.extern.slf4j.Slf4j;
 
-/**
- * .
- * Package Name:   com.yyj.util
- *
- * @author: YYJ
- * Date Time:      2021/5/24 15:03
- */
+
+@Slf4j
 public class MessageUtils {
 
     /**
@@ -34,6 +30,7 @@ public class MessageUtils {
         String repStr = null;
         try {
             repStr = objectMapper.writeValueAsString(resultMessage);
+            log.info("message result: {}",  repStr);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

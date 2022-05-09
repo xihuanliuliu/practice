@@ -1,7 +1,8 @@
-package com.yyj.controller;
+package com.jd.edi.socket.controller;
 
-import com.yyj.pojo.Result;
-import com.yyj.pojo.User;
+
+import com.jd.edi.socket.entity.Result;
+import com.jd.edi.socket.entity.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +30,6 @@ public class LoginController {
      * 处理用户登录请求.
      * @param user 用户登录数据
      * @param session session对象
-     * @return com.yyj.pojo.Result
      */
     @PostMapping(value = "/login")
     @ResponseBody
