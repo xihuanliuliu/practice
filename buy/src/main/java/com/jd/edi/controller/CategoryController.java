@@ -56,9 +56,15 @@ public class CategoryController {
         return R.success("更新分类成功");
     }
 
+
+    // http://localhost:8080/category/list?type=1
+    // @RequestParam参数没有必要添加
+    //传入的类型可以是String，也可是Integer
+
     @GetMapping("/list")
-    public R<List<Category>> getCategoryList(Category category) {
-        List<Category> list = categoryService.getCategoryList(category.getType());
+    public R<List<Category>> getCategoryList(Integer type) {
+        System.out.println("currenttype : " + type);
+        List<Category> list = categoryService.getCategoryList(type);
         return R.success(list);
     }
 
