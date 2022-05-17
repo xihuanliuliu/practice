@@ -1,4 +1,4 @@
-package com.jd.edi.version2.common;
+package com.jd.edi.version3.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

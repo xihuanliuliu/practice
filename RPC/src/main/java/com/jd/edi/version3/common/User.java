@@ -1,15 +1,21 @@
-package com.jd.edi.version2.common;
+package com.jd.edi.version3.common;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Blog implements Serializable {
+public class User implements Serializable {
+
+    private Integer id;
     private String name;
-    private String title;
+    private String age;
+    private String sex;
+
 }

@@ -1,15 +1,18 @@
-package com.jd.edi.version2.common;
+package com.jd.edi.version4.common;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
-@AllArgsConstructor
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Blog implements Serializable {
-    private String name;
+    private Integer id;
+    private Integer useId;
     private String title;
 }
