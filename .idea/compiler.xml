@@ -16,9 +16,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="basic" target="1.8" />
+      <module name="basic" target="1.5" />
       <module name="buy" target="1.8" />
-      <module name="buyModule" target="1.8" />
+      <module name="buyModule" target="1.5" />
       <module name="RPC" target="8" />
       <module name="socket" target="1.8" />
       <module name="ssm" target="6" />
