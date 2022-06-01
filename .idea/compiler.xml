@@ -10,20 +10,26 @@
         <module name="socket" />
         <module name="ssm" />
         <module name="RPC" />
+        <module name="basic" />
+        <module name="buyModule" />
         <module name="buy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="basic" target="1.8" />
       <module name="buy" target="1.8" />
+      <module name="buyModule" target="1.8" />
       <module name="RPC" target="8" />
       <module name="socket" target="1.8" />
-      <module name="ssm" target="1.5" />
+      <module name="ssm" target="6" />
       <module name="system" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="basic" options="-parameters" />
       <module name="buy" options="-parameters" />
+      <module name="buyModule" options="-parameters" />
       <module name="socket" options="-parameters" />
     </option>
   </component>

@@ -20,7 +20,9 @@ public class BillServiceImpl implements BillService {
     private BillMapper billMapper;
 
     public List<Bill> findBillList(BillVo billVo) {
-        return billMapper.findBillList(billVo);
+        System.out.println("BillServiceImpl findBillList");
+        return null;
+        //return billMapper.findBillList(billVo);
     }
 
     @Transactional(rollbackFor = Exception.class)

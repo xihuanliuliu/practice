@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/buy/pom.xml" />
         <option value="$PROJECT_DIR$/socket/pom.xml" />
         <option value="$PROJECT_DIR$/RPC/pom.xml" />
+        <option value="$PROJECT_DIR$/basic/pom.xml" />
+        <option value="$PROJECT_DIR$/buyModule/pom.xml" />
       </list>
     </option>
   </component>

@@ -45,7 +45,6 @@ public class DishController {
         Page<DishDto> dishDtoPage = new Page<>();
         // copy数据，除了records-records的数据由我们自己构造
         BeanUtils.copyProperties(dishPage, dishDtoPage, "records");
-
         List<Dish> records = dishPage.getRecords();
 
         List<DishDto> dishDtoList = records.stream().map((item)->{
