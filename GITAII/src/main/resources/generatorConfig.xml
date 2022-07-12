@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+			location="D:\maven\maven\apache-maven-3.8.4\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar" />
+	<context id="context">
+		<!-- 生成的pojo，将implements Serializable-->
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/gitai" userId="root"
+			password="root">
+			<property name="remarksReporting" value="true" />
+			<property name="useUnicode" value="true" />
+			<property name="characterEncoding" value="UTF-8" />
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!--指定生成model的路径-->
+		<javaModelGenerator
+			targetPackage="com.ai.aif.gitai.dao.entity"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<javaClientGenerator
+			targetPackage="com.ai.aif.gitai.dao.mapper"
+			targetProject="src/main/java" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!--指定生成model的路径-->
+<!--		<javaModelGenerator targetPackage="com.macro.mall.tiny.mbg.model" targetProject="mall-tiny-01\src\main\java"/>-->
+		<!--指定生成mapper.xml的路径-->
+<!--		<sqlMapGenerator targetPackage="com.macro.mall.tiny.mbg.mapper" targetProject="mall-tiny-01\src\main\resources"/>-->
+		<!--指定生成mapper接口的的路径-->
+<!--		<javaClientGenerator type="XMLMAPPER" targetPackage="com.macro.mall.tiny.mbg.mapper"-->
+<!--							 targetProject="mall-tiny-01\src\main\java"/>-->
+		<!--生成全部表tableName设为%-->
+		<table tableName="%">
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+		
+<!--		<table tableName="t_coding_commit_kpi" domainObjectName="CodingCommitKpi">-->
+<!--			<generatedKey column="commit_kpi_id" sqlStatement="MySql" identity="true" />-->
+<!--		</table>-->
+<!--		<table tableName="t_application" domainObjectName="Application">-->
+<!--			<generatedKey column="application_id" sqlStatement="MySql" identity="true"></generatedKey>-->
+<!--		</table>-->
+	</context>
+</generatorConfiguration>

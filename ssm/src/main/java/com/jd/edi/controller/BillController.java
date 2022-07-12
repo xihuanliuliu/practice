@@ -29,6 +29,7 @@ public class BillController {
         PageHelper.startPage(billVo.getPage(), billVo.getLimit());
         List<Bill> billList = billService.findBillList(billVo);
         PageInfo<Bill> billPageInfo = new PageInfo<Bill>(billList);
+        logger.info("");
         return new DataGridViewResult(billPageInfo.getTotal(), billPageInfo.getList());
     }
 

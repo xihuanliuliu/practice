@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    #应用的名称，可选
+    name: reggie_take_out
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/gitai?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+auth:
+  exclude:
+    path: /employee/login;/employee/logout;/backend/;/front/;/backend/page/login/login.html;/backend/page/demo/upload.html;/common/;/user/sendMsg;/user/login
+
+common:
+  path: E:\BaiduNetdiskDownload\reset

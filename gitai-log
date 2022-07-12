@@ -1,0 +1,35 @@
+2022-06-23 11:47:41.169 [restartedMain] INFO  com.ai.aif.gitai.GitAIApplication   55 - Starting GitAIApplication using Java 1.8.0_144 on LAPTOP-BJ6EHE91 with PID 22500 (E:\Java\project\practice\GITAII\target\classes started by 39495 in E:\Java\project\practice)
+2022-06-23 11:47:41.184 [restartedMain] INFO  com.ai.aif.gitai.GitAIApplication  675 - No active profile set, falling back to default profiles: default
+2022-06-23 11:47:41.231 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor  255 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-23 11:47:41.231 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor  255 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-23 11:47:42.235 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer  108 - Tomcat initialized with port(s): 8080 (http)
+2022-06-23 11:47:42.235 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol  173 - Initializing ProtocolHandler ["http-nio-8080"]
+2022-06-23 11:47:42.235 [restartedMain] INFO  org.apache.catalina.core.StandardService  173 - Starting service [Tomcat]
+2022-06-23 11:47:42.235 [restartedMain] INFO  org.apache.catalina.core.StandardEngine  173 - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2022-06-23 11:47:42.283 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]  173 - Initializing Spring embedded WebApplicationContext
+2022-06-23 11:47:42.283 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext  289 - Root WebApplicationContext: initialization completed in 1052 ms
+2022-06-23 11:47:42.674 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  181 - Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-23 11:47:42.815 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration  105 - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-06-23 11:47:42.878 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory 1220 - Using default implementation for ThreadExecutor
+2022-06-23 11:47:42.878 [restartedMain] INFO  org.quartz.core.SchedulerSignalerImpl   61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2022-06-23 11:47:42.878 [restartedMain] INFO  org.quartz.core.QuartzScheduler  229 - Quartz Scheduler v.2.3.2 created.
+2022-06-23 11:47:42.878 [restartedMain] INFO  org.quartz.simpl.RAMJobStore  155 - RAMJobStore initialized.
+2022-06-23 11:47:42.878 [restartedMain] INFO  org.quartz.core.QuartzScheduler  294 - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2022-06-23 11:47:42.878 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory 1374 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2022-06-23 11:47:42.878 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory 1378 - Quartz scheduler version: 2.3.2
+2022-06-23 11:47:42.878 [restartedMain] INFO  org.quartz.core.QuartzScheduler 2293 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@152b9747
+2022-06-23 11:47:42.925 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer   58 - LiveReload server is running on port 35729
+2022-06-23 11:47:42.941 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol  173 - Starting ProtocolHandler ["http-nio-8080"]
+2022-06-23 11:47:42.972 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer  220 - Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-23 11:47:42.972 [restartedMain] INFO  o.s.scheduling.quartz.SchedulerFactoryBean  727 - Starting Quartz Scheduler now
+2022-06-23 11:47:42.972 [restartedMain] INFO  org.quartz.core.QuartzScheduler  547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2022-06-23 11:47:42.972 [restartedMain] INFO  com.ai.aif.gitai.utils.PropertiesConfigurationUtil   22 - load hosts.properties property
+2022-06-23 11:47:42.972 [restartedMain] WARN  com.ai.aif.gitai.utils.PropertiesConfigurationUtil   25 - Can not find hosts.properties
+2022-06-23 11:47:42.972 [restartedMain] INFO  com.ai.aif.gitai.GitAIApplication   61 - Started GitAIApplication in 2.25 seconds (JVM running for 3.769)
