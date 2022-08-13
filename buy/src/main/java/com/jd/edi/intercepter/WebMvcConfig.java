@@ -54,6 +54,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport implements Initiali
     public void addInterceptors(InterceptorRegistry registry) {
         // 添加自己的拦截器
         registry.addInterceptor(authInterceptor());
+        registry.addInterceptor(new AutoIdempotentInterceptor());
     }
 
     AuthInterceptor authInterceptor(){

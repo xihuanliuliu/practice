@@ -8,6 +8,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring" />
         <module name="RPC" />
         <module name="gitAI" />
         <module name="buy" />
@@ -16,17 +17,22 @@
         <module name="basic" />
         <module name="buyModule" />
         <module name="GITAII" />
+        <module name="community" />
+        <module name="es" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="basic" target="1.8" />
       <module name="buy" target="1.8" />
       <module name="buyModule" target="1.8" />
+      <module name="community" target="8" />
+      <module name="es" target="1.8" />
       <module name="gitai" target="1.8" />
       <module name="gitAI" target="8" />
       <module name="GITAII" target="8" />
       <module name="RPC" target="8" />
       <module name="socket" target="1.8" />
+      <module name="spring" target="1.8" />
       <module name="ssm" target="6" />
       <module name="system" target="1.5" />
     </bytecodeTargetLevel>
@@ -37,8 +43,11 @@
       <module name="basic" options="-parameters" />
       <module name="buy" options="-parameters" />
       <module name="buyModule" options="-parameters" />
+      <module name="community" options="-parameters" />
+      <module name="es" options="-parameters" />
       <module name="gitai" options="-parameters" />
       <module name="socket" options="-parameters" />
+      <module name="spring" options="-parameters" />
     </option>
   </component>
 </project>

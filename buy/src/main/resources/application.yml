@@ -7,9 +7,13 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/gitai?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://localhost:3306/cloud_order?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: root
+  redis:
+    host: localhost
+    port: 6379
+
 mybatis-plus:
   configuration:
     #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
@@ -21,7 +25,15 @@ mybatis-plus:
 
 auth:
   exclude:
-    path: /employee/login;/employee/logout;/backend/;/front/;/backend/page/login/login.html;/backend/page/demo/upload.html;/common/;/user/sendMsg;/user/login
+    path: /employee/login;/employee/logout;/backend/;/front/;/backend/page/login/login.html;/backend/page/demo/upload.html;/common/;/user/sendMsg;/user/login;/hotel
 
 common:
   path: E:\BaiduNetdiskDownload\reset
+
+es:
+  detail:
+    ip: 127.0.0.1
+    port: 9300
+
+logging:
+  config: classpath:logback.xml

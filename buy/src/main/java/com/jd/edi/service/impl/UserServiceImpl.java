@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserByPhone(String phone) {
+        System.out.println("执行了吗");
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getPhone, phone);
         return userMapper.selectOne(queryWrapper);

@@ -1,6 +1,7 @@
 package com.jd.edi.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.jd.edi.annotation.AutoIdempotent;
 import com.jd.edi.common.R;
 import com.jd.edi.entity.Category;
 import com.jd.edi.entity.Dish;
@@ -8,6 +9,8 @@ import com.jd.edi.exception.CategoryException;
 import com.jd.edi.service.CategoryService;
 import com.jd.edi.service.DishService;
 import com.jd.edi.service.SetmealService;
+import com.jd.edi.service.TokenService;
+import com.jd.edi.vo.CategoryVo;
 import com.jd.edi.vo.DishDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +31,9 @@ public class CategoryController {
     private DishService dishService;
     @Resource
     private SetmealService setmealService;
+
+    @Resource
+    private TokenService tokenService;
     
     @PostMapping
     public R<String> saveCategory(HttpServletRequest request, @RequestBody Category category) {
@@ -39,12 +45,24 @@ public class CategoryController {
         return R.success("添加分类成功");
     }
 
-    @GetMapping("/page")
+    @GetMapping("/pages")
     public R<Page<Category>> getCategoryPage(@RequestParam Integer page, @RequestParam Integer pageSize, @RequestParam(required = false) String name,
                                              @RequestParam(required = false) Integer type, @RequestParam(required = false) Integer sort) {
         Page<Category> category = categoryService.getCategory(page, pageSize, name, type, sort);
         return R.success(category);
     }
+
+
+    @AutoIdempotent
+    @GetMapping("/page")
+    public R<Page<Category>> getCategoryPages(CategoryVo categoryVo) {
+        Page<Category> category = categoryService.getCategory(categoryVo.getPage(), categoryVo.getPageSize(), categoryVo.getName(),
+                categoryVo.getType(), categoryVo.getSort());
+        System.out.println("tokenBean: " + tokenService.toString());
+        tokenService.createToken();
+        return R.success(category);
+    }
+
 
 
     @PutMapping
